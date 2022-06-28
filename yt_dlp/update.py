@@ -115,6 +115,8 @@ class Updater:
         label = _FILE_SUFFIXES[detect_variant()]
         if label and platform.architecture()[0][:2] == '32':
             label = f'_x86{label}'
+
+        self.ydl.to_screen(f'release name: yt-dlp{label}')
         return f'yt-dlp{label}'
 
     @functools.cached_property
